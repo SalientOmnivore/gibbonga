@@ -39,7 +39,7 @@ class Game:
         self.win = False
         self.quit = False
         self.checked = 0
-
+        self.bosshealth = 35
         # Setup Game Window
         icon = setup.IMAGES['starship']
         pygame.display.set_icon(icon)
@@ -231,8 +231,14 @@ class Game:
                 for shot in shots:
                     if shot.collide_with(enemy):
                         setup.SOUNDS['enemy'].play()
-                        enemy.die()
-                        self.score += 1
+                        if(self.score == 30):
+                            print(str(self.bosshealth))
+                            self.bosshealth -= 1
+                            if(self.bosshealth == 0):
+                                enemy.die()
+                        else:
+                            enemy.die()
+                            self.score += 1
 
             # Draw actors
             for actor in [player] + [health] + text + enemies + shots + enemy_shots + recover_health:

@@ -29,11 +29,27 @@ class Level:
     #  @returns enemies, Enemy array for game
     def generate_enemies(self):
         enemies = []
-        for row_number in range(self.ENEMY_ROWS):
-            for enemy_number in range(self.ENEMIES_PER_ROW):
-                enemy = Enemy()
-                enemy.spawn_at(row_number, enemy_number)
-                enemies.append(enemy)
+        if(self.level == 1):
+            print("1")
+            for row_number in range(self.ENEMY_ROWS):
+                for enemy_number in range(self.ENEMIES_PER_ROW):
+                    enemy = Enemy(1)
+                    enemy.spawn_at(row_number, enemy_number)
+                    enemies.append(enemy)
+        if(self.level == 2):
+            print ("2")
+            for row_number in range(self.ENEMY_ROWS):
+                for enemy_number in range(self.ENEMIES_PER_ROW):
+                    enemy = Enemy(2)
+                    enemy.spawn_at(row_number, enemy_number)
+                    enemies.append(enemy)
+        if(self.level == 3):
+            print ("3")
+            for row_number in range(self.ENEMY_ROWS):
+                for enemy_number in range(self.ENEMIES_PER_ROW):
+                    enemy = Enemy(3)
+                    enemy.spawn_at(row_number, enemy_number)
+                    enemies.append(enemy)
         return enemies
 
     ## Updates enemy fleet movements

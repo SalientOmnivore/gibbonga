@@ -10,16 +10,12 @@ from .. import setup, constants, actor
 
 ## @class Enemy
 #  @brief Implements Actor base class as Enemy object
-class Enemy(actor.Actor):
+class Boss(actor.Actor):
 
     ## Constructor
     #  @param image, surface object with Enemy image
-    def __init__(self,level):
-        print("enemy level" + str(level))
-        if(level == 3):
-            actor.Actor.__init__(self, setup.IMAGES['enemy3'])
-        else:
-            actor.Actor.__init__(self, setup.IMAGES['enemy4'])
+    def __init__(self):
+        actor.Actor.__init__(self, setup.IMAGES['enemy3'])
         self.rect.x = constants.SCREENRECT.left
         self.rect.y = constants.SCREENRECT.top
         self.x_dir = 1
@@ -29,10 +25,6 @@ class Enemy(actor.Actor):
     #  @param enemy_rows, Number of rows
     #  @param enemies_per_row, Number of enemies per row
     def spawn_at(self, enemy_rows, enemies_per_row):
-        #if(self.level == 3):
-         #   self.rect.x = 0
-          #  self.rect.y = 100
-
         self.rect.x = constants.ENEMY_WIDTH + (constants.ENEMY_WIDTH * enemies_per_row)
         self.rect.y = 100 + (constants.ENEMY_HEIGHT * enemy_rows)
 

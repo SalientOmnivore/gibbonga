@@ -42,8 +42,8 @@ SHOT_SPEED = 10
 
 # Level-based properties
 TOTAL_LEVELS = 3
-ENEMIES_PER_ROW = [0, 6, 6, 8]
-ENEMY_ROWS = [0, 2, 3, 3]
-TOTAL_ENEMIES = [0, 12, 30, 54]
+ENEMIES_PER_ROW = [0, 6, 6, 1]
+ENEMY_ROWS = [0, 2, 3, 1]
+TOTAL_ENEMIES = [0, 12, 30, 31]
 ENEMY_SPEED = [0, 4, 5, 6]
 ENEMY_DROP_DIST = [0, 10, 15, 20]
